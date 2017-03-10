@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * Class for generating SAML 2.0 metadata from SimpleSAMLphp metadata arrays.
@@ -8,7 +9,7 @@
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_SAMLBuilder
+class SAMLBuilder
 {
 
 

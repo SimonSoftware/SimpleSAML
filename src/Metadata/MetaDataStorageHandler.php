@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * This file defines a class for metadata handling.
@@ -7,7 +8,7 @@
  * @author Andreas Åkre Solberg, UNINETT AS. <andreas.solberg@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_MetaDataStorageHandler
+class MetaDataStorageHandler
 {
 
 

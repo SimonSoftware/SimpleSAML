@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * This class implements a metadata source which loads metadata from XML files.
@@ -8,7 +9,7 @@
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_MetaDataStorageHandlerXML extends SimpleSAML_Metadata_MetaDataStorageSource
+class MetaDataStorageHandlerXML extends MetaDataStorageSource
 {
 
     /**

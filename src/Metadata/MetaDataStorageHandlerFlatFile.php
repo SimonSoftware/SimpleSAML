@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * This file defines a flat file metadata source.
@@ -9,7 +10,7 @@
  * @author Andreas Åkre Solberg, UNINETT AS. <andreas.solberg@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_MetaDataStorageHandlerFlatFile extends SimpleSAML_Metadata_MetaDataStorageSource
+class MetaDataStorageHandlerFlatFile extends MetaDataStorageSource
 {
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * Class for handling metadata files stored in a database.
@@ -11,7 +12,7 @@
  * @author Tyler Antonio, University of Alberta <tantonio@ualberta.ca>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_MetaDataStorageHandlerPdo extends SimpleSAML_Metadata_MetaDataStorageSource
+class MetaDataStorageHandlerPdo extends MetaDataStorageSource
 {
 
     /**

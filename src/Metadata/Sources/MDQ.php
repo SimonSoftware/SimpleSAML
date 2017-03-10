@@ -13,7 +13,7 @@ use SimpleSAML\Utils\HTTP;
  * @author Tamas Frank, NIIFI
  * @package SimpleSAMLphp
  */
-class MDQ extends \SimpleSAML_Metadata_MetaDataStorageSource
+class MDQ extends MetaDataStorageSource
 {
 
     /**
@@ -63,7 +63,7 @@ class MDQ extends \SimpleSAML_Metadata_MetaDataStorageSource
      *
      * @throws \Exception If no server option can be found in the configuration.
      */
-    protected function __construct($config)
+    public function __construct($config)
     {
         assert('is_array($config)');
 
@@ -80,7 +80,7 @@ class MDQ extends \SimpleSAML_Metadata_MetaDataStorageSource
         }
 
         if (array_key_exists('cachedir', $config)) {
-            $globalConfig = \SimpleSAML_Configuration::getInstance();
+            $globalConfig = \SimpleSAML\Configuration::getInstance();
             $this->cacheDir = $globalConfig->resolvePath($config['cachedir']);
         } else {
             $this->cacheDir = null;
@@ -222,7 +222,7 @@ class MDQ extends \SimpleSAML_Metadata_MetaDataStorageSource
      * @return array|NULL  The associative array with the metadata, or NULL if no metadata for
      *                     the given set was found.
      */
-    private static function getParsedSet(\SimpleSAML_Metadata_SAMLParser $entity, $set)
+    private static function getParsedSet(\SimpleSAML\Metadata\SAMLParser $entity, $set)
     {
         assert('is_string($set)');
 
@@ -303,7 +303,7 @@ class MDQ extends \SimpleSAML_Metadata_MetaDataStorageSource
         }
 
         /** @var string $xmldata */
-        $entity = \SimpleSAML_Metadata_SAMLParser::parseString($xmldata);
+        $entity = \SimpleSAML\Metadata\SAMLParser::parseString($xmldata);
         Logger::debug(__CLASS__.': completed parsing of ['.$mdq_url.']');
 
         if ($this->validateFingerprint !== null) {

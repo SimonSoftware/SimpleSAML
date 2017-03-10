@@ -1,13 +1,15 @@
 <?php
 
 
+namespace SimpleSAML\Metadata;
+
 /**
  * This class implements a helper function for signing of metadata.
  *
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_Signer
+class Signer
 {
 
     /**

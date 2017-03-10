@@ -1,12 +1,13 @@
 <?php
 
+namespace SimpleSAML\Metadata;
 
 /**
  * Class for handling metadata files in serialized format.
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Metadata_MetaDataStorageHandlerSerialize extends SimpleSAML_Metadata_MetaDataStorageSource
+class MetaDataStorageHandlerSerialize extends MetaDataStorageSource
 {
 
     /**

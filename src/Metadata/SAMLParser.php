@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleSAML\Metadata;
+
 
 /**
  * This is class for parsing of SAML 1.x and SAML 2.0 metadata.
@@ -12,7 +14,7 @@
  * parseDescriptorsFile, parseDescriptorsString or parseDescriptorsElement methods. These functions will return
  * an array of SAMLParser elements where each element represents an EntityDescriptor-element.
  */
-class SimpleSAML_Metadata_SAMLParser
+class SAMLParser
 {
 
     /**
