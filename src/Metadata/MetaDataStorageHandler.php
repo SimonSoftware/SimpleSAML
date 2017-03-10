@@ -54,7 +54,7 @@ class MetaDataStorageHandler
      */
     protected function __construct()
     {
-        $config = SimpleSAML_Configuration::getInstance();
+        $config = \SimpleSAML\Configuration::getInstance();
 
         $sourcesConfig = $config->getArray('metadata.sources', null);
 
@@ -65,7 +65,7 @@ class MetaDataStorageHandler
         }
 
         try {
-            $this->sources = SimpleSAML_Metadata_MetaDataStorageSource::parseSources($sourcesConfig);
+            $this->sources = \SimpleSAML\Metadata\MetaDataStorageSource::parseSources($sourcesConfig);
         } catch (Exception $e) {
             throw new Exception(
                 "Invalid configuration of the 'metadata.sources' configuration option: ".$e->getMessage()
@@ -96,8 +96,8 @@ class MetaDataStorageHandler
         }
 
         // get the configuration
-        $config = SimpleSAML_Configuration::getInstance();
-        assert($config instanceof SimpleSAML_Configuration);
+        $config = \SimpleSAML\Configuration::getInstance();
+        assert($config instanceof \SimpleSAML\Configuration);
 
         $baseurl = \SimpleSAML\Utils\HTTP::getSelfURLHost().$config->getBasePath();
 
@@ -150,9 +150,9 @@ class MetaDataStorageHandler
                 if (array_key_exists('expire', $le)) {
                     if ($le['expire'] < time()) {
                         unset($srcList[$key]);
-                        SimpleSAML\Logger::warning(
+                        \SimpleSAML\Logger::warning(
                             "Dropping metadata entity ".var_export($key, true).", expired ".
-                            SimpleSAML\Utils\Time::generateTimestamp($le['expire'])."."
+                            \SimpleSAML\Utils\Time::generateTimestamp($le['expire'])."."
                         );
                     }
                 }
@@ -298,7 +298,7 @@ class MetaDataStorageHandler
             }
         }
 
-        throw new SimpleSAML_Error_MetadataNotFound($index);
+        throw new \SimpleSAML\Error\MetadataNotFound($index);
     }
 
 
@@ -319,7 +319,7 @@ class MetaDataStorageHandler
         assert('is_string($set)');
 
         $metadata = $this->getMetaData($entityId, $set);
-        return SimpleSAML_Configuration::loadFromArray($metadata, $set.'/'.var_export($entityId, true));
+        return \SimpleSAML\Configuration::loadFromArray($metadata, $set.'/'.var_export($entityId, true));
     }
 
 
