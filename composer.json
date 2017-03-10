@@ -19,6 +19,6 @@
         "psr-4": {
             "SimpleSAML\\": "src/"
         },
-        "files": ["src/_autoload_modules.php"]
+        "files": ["_autoload_modules.php"]
     }
 }
