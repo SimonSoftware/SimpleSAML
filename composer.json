@@ -1,0 +1,23 @@
+{
+    "name": "simonsoftware/simple-saml",
+    "description": "SimpleSAML libraries.",
+    "keywords": ["template", "composer", "package"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Paolo Bolla",
+            "email": "support@simonsoftware.it"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+    },
+	"autoload": {
+        "psr-4": {
+            "SimpleSAML\\": "src/"
+        }
+    }
+}
