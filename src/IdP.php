@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * IdP class.
@@ -8,7 +9,7 @@
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_IdP
+class IdP
 {
 
     /**

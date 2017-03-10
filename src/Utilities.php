@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * Misc static functions that is used several places.in example parsing and id generation.
@@ -9,7 +10,7 @@
  *
  * @deprecated This entire class will be removed in SimpleSAMLphp 2.0.
  */
-class SimpleSAML_Utilities
+class Utilities
 {
 
     /**

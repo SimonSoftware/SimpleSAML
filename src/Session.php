@@ -1,4 +1,8 @@
 <?php
+
+namespace SimpleSAML;
+
+
 /**
  * The Session class holds information about a user session, and everything attached to it.
  *
@@ -16,7 +20,7 @@
  * @author Jaime Pérez Crespo, UNINETT AS <jaime.perez@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Session implements Serializable
+class Session implements Serializable
 {
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * This file is part of SimpleSAMLphp. See the file COPYING in the
@@ -12,7 +13,7 @@
  * @author Olav Morken, UNINETT AS. <andreas.solberg@uninett.no>
  * @package SimpleSAMLphp
  */
-abstract class SimpleSAML_SessionHandler
+abstract class SessionHandler
 {
 
 

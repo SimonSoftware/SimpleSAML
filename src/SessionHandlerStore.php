@@ -1,12 +1,13 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * Session storage in the data store.
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_SessionHandlerStore extends SimpleSAML_SessionHandlerCookie
+class SessionHandlerStore extends SessionHandlerCookie
 {
 
     /**

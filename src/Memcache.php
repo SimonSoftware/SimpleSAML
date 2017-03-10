@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * This file implements functions to read and write to a group of memcache
@@ -17,7 +18,7 @@
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Memcache
+class Memcache
 {
 
     /**

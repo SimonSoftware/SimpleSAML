@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * This file is part of SimpleSAMLphp. See the file COPYING in the root of the distribution for licence information.
@@ -11,7 +12,7 @@
  * @package SimpleSAMLphp
  * @abstract
  */
-abstract class SimpleSAML_SessionHandlerCookie extends SimpleSAML_SessionHandler
+abstract class SessionHandlerCookie extends SessionHandler
 {
 
     /**

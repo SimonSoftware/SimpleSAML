@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * This file is part of SimpleSAMLphp. See the file COPYING in the root of the distribution for licence information.
@@ -9,7 +10,7 @@
  * @author Olav Morken, UNINETT AS. <andreas.solberg@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_SessionHandlerPHP extends SimpleSAML_SessionHandler
+class SessionHandlerPHP extends SessionHandler
 {
 
     /**

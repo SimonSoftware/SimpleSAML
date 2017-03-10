@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * This is a helper class for the Auth MemCookie module.
@@ -10,7 +11,7 @@
  *
  * @deprecated This class has been deprecated and will be removed in SSP 2.0. Use the memcookie module instead.
  */
-class SimpleSAML_AuthMemCookie
+class AuthMemCookie
 {
 
     /**

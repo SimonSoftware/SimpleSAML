@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML;
 
 /**
  * Configuration of SimpleSAMLphp
@@ -7,7 +8,7 @@
  * @author Andreas Aakre Solberg, UNINETT AS. <andreas.solberg@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Configuration
+class Configuration
 {
 
     /**
