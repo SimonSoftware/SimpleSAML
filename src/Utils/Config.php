@@ -5,6 +5,9 @@ namespace SimpleSAML\Utils;
  *
  * @package SimpleSAMLphp
  */
+
+use SimpleSAML\Configuration;
+
 class Config
 {
 

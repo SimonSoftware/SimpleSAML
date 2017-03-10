@@ -9,6 +9,8 @@ namespace SimpleSAML\Metadata;
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
+use SimpleSAML\Configuration;
+
 class Signer
 {
 
@@ -220,7 +222,7 @@ class Signer
      */
     public static function sign($metadataString, $entityMetadata, $type)
     {
-        $config = SimpleSAML_Configuration::getInstance();
+        $config = Configuration::getInstance();
 
         // check if metadata signing is enabled
         if (!self::isMetadataSigningEnabled($config, $entityMetadata, $type)) {

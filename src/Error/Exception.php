@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Error;
 
 /**
  * Base class for SimpleSAMLphp Exceptions
@@ -9,7 +10,7 @@
  * @author Thomas Graff <thomas.graff@uninett.no>
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_Exception extends Exception
+class Exception extends \Exception
 {
 
     /**

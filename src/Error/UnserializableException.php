@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleSAML\Error;
+
 /**
  * Class for saving normal exceptions for serialization.
  *
@@ -12,7 +14,7 @@
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_UnserializableException extends SimpleSAML_Error_Exception {
+class UnserializableException extends Exception {
 
 	/**
 	 * The classname of the original exception.

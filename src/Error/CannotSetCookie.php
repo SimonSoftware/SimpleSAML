@@ -9,7 +9,7 @@
 namespace SimpleSAML\Error;
 
 
-class CannotSetCookie extends \SimpleSAML_Error_Exception
+class CannotSetCookie extends Exception
 {
 
     /**

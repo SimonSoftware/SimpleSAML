@@ -44,7 +44,7 @@ class MetaDataStorageHandlerFlatFile extends MetaDataStorageSource
         assert('is_array($config)');
 
         // get the configuration
-        $globalConfig = SimpleSAML_Configuration::getInstance();
+        $globalConfig = \SimpleSAML\Configuration::getInstance();
 
         // find the path to the directory we should search for metadata in
         if (array_key_exists('directory', $config)) {

@@ -1,12 +1,14 @@
 <?php
 
+namespace SimpleSAML\Error;
+
 /**
  * Class for creating exceptions from assertion failures.
  *
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_Assertion extends SimpleSAML_Error_Exception {
+class Assertion extends Exception {
 
 
 	/**

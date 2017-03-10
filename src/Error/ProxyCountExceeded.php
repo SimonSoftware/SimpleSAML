@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Error;
 
 /**
  * Class SimpleSAML_Error_ProxyCountExceeded
@@ -9,6 +10,6 @@
  *
  * @see \SimpleSAML\Module\saml\Error\ProxyCountExceeded
  */
-class SimpleSAML_Error_ProxyCountExceeded extends SimpleSAML_Error_Exception {
+class ProxyCountExceeded extends Exception {
 
 }

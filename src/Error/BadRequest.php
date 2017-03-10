@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleSAML\Error;
+
 /**
  * Exception which will show a 400 Bad Request error page.
  *
@@ -9,7 +11,7 @@
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_BadRequest extends SimpleSAML_Error_Error {
+class BadRequest extends Error {
 
 
 	/**

@@ -5,7 +5,7 @@
  *
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_UserAborted extends SimpleSAML_Error_Error {
+class UserAborted extends Error {
 
 	/**
 	 * Create the error

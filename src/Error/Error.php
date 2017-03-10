@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Error;
 
 /**
  * Class that wraps SimpleSAMLphp errors in exceptions.
@@ -7,7 +8,7 @@
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_Error extends SimpleSAML_Error_Exception
+class Error extends Exception
 {
 
 

@@ -1,5 +1,6 @@
 <?php
 
+namespace SimpleSAML\Error;
 
 /**
  * Class SimpleSAML_Error_NoPassive
@@ -9,6 +10,6 @@
  *
  * @see \SimpleSAML\Module\saml\Error\NoPassive
  */
-class SimpleSAML_Error_NoPassive extends SimpleSAML_Error_Exception {
+class NoPassive extends Error_Exception {
 
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleSAML\Error;
+
 /**
  * Exception which will show a 404 Not Found error page.
  *
@@ -9,7 +11,7 @@
  * @author Olav Morken, UNINETT AS.
  * @package SimpleSAMLphp
  */
-class SimpleSAML_Error_NotFound extends SimpleSAML_Error_Error {
+class NotFound extends Error {
 
 
 	/**

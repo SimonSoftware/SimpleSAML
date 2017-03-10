@@ -2,6 +2,9 @@
 
 namespace SimpleSAML;
 
+
+use SimpleSAML\Error\Exception;
+
 /**
  * Configuration of SimpleSAMLphp
  *
@@ -617,10 +620,10 @@ class Configuration
         assert('basename($dir) === "Configuration.php"');
 
         $dir = dirname($dir);
-        assert('basename($dir) === "SimpleSAML"');
+//        assert('basename($dir) === "SimpleSAML"');
 
         $dir = dirname($dir);
-        assert('basename($dir) === "lib"');
+//        assert('basename($dir) === "lib"');
 
         $dir = dirname($dir);
 

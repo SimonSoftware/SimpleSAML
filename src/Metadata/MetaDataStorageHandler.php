@@ -1,6 +1,8 @@
 <?php
 
 namespace SimpleSAML\Metadata;
+use SimpleSAML\Configuration;
+use SimpleSAML\Error\Exception;
 
 /**
  * This file defines a class for metadata handling.
@@ -17,7 +19,7 @@ class MetaDataStorageHandler
      * instance of the metadata handler. This variable will be null if
      * we haven't instantiated a metadata handler yet.
      *
-     * @var SimpleSAML_Metadata_MetaDataStorageHandler
+     * @var \SimpleSAML\Metadata\MetaDataStorageHandler
      */
     private static $metadataHandler = null;
 
@@ -26,7 +28,7 @@ class MetaDataStorageHandler
      * This is a list of all the metadata sources we have in our metadata
      * chain. When we need metadata, we will look through this chain from start to end.
      *
-     * @var SimpleSAML_Metadata_MetaDataStorageSource[]
+     * @var \SimpleSAML\Metadata\MetaDataStorageSource[]
      */
     private $sources;
 
@@ -41,7 +43,7 @@ class MetaDataStorageHandler
     public static function getMetadataHandler()
     {
         if (self::$metadataHandler === null) {
-            self::$metadataHandler = new SimpleSAML_Metadata_MetaDataStorageHandler();
+            self::$metadataHandler = new MetaDataStorageHandler();
         }
 
         return self::$metadataHandler;
@@ -54,7 +56,7 @@ class MetaDataStorageHandler
      */
     protected function __construct()
     {
-        $config = \SimpleSAML\Configuration::getInstance();
+        $config = Configuration::getInstance();
 
         $sourcesConfig = $config->getArray('metadata.sources', null);
 
@@ -65,7 +67,7 @@ class MetaDataStorageHandler
         }
 
         try {
-            $this->sources = \SimpleSAML\Metadata\MetaDataStorageSource::parseSources($sourcesConfig);
+            $this->sources = MetaDataStorageSource::parseSources($sourcesConfig);
         } catch (Exception $e) {
             throw new Exception(
                 "Invalid configuration of the 'metadata.sources' configuration option: ".$e->getMessage()
@@ -97,7 +99,7 @@ class MetaDataStorageHandler
 
         // get the configuration
         $config = \SimpleSAML\Configuration::getInstance();
-        assert($config instanceof \SimpleSAML\Configuration);
+        assert($config instanceof Configuration);
 
         $baseurl = \SimpleSAML\Utils\HTTP::getSelfURLHost().$config->getBasePath();
 
