@@ -126,7 +126,7 @@ class Configuration
                     require($filename);
                 } catch (ParseError $e) {
                     self::$loadedConfigs[$filename] = self::loadFromArray(array(), '[ARRAY]', 'simplesaml');
-                    throw new SimpleSAML\Error\ConfigurationError($e->getMessage(), $filename, array());
+                    throw new Error\ConfigurationError($e->getMessage(), $filename, array());
                 }
             } else {
                 require($filename);
@@ -163,7 +163,7 @@ class Configuration
             throw new \SimpleSAML\Error\ConfigurationError('Missing configuration file', $filename);
         } else {
             // file does not exist, but is optional, so return an empty configuration object without saving it
-            $cfg = new SimpleSAML_Configuration(array(), $filename);
+            $cfg = new Configuration(array(), $filename);
             $cfg->filename = $filename;
             return $cfg;
         }
@@ -174,7 +174,7 @@ class Configuration
         self::$loadedConfigs[$filename] = $cfg;
 
         if ($spurious_output) {
-            SimpleSAML\Logger::warning(
+            Logger::warning(
                 "The configuration file '$filename' generates output. Please review your configuration."
             );
         }
@@ -216,7 +216,7 @@ class Configuration
             if ($configSet !== 'simplesaml') {
                 throw new Exception('Configuration set \''.$configSet.'\' not initialized.');
             } else {
-                self::$configDirs['simplesaml'] = SimpleSAML\Utils\Config::getConfigDir();
+                self::$configDirs['simplesaml'] = \SimpleSAML\Utils\Config::getConfigDir();
             }
         }
 
@@ -246,7 +246,7 @@ class Configuration
             if ($configSet !== 'simplesaml') {
                 throw new Exception('Configuration set \''.$configSet.'\' not initialized.');
             } else {
-                self::$configDirs['simplesaml'] = SimpleSAML\Utils\Config::getConfigDir();
+                self::$configDirs['simplesaml'] = \SimpleSAML\Utils\Config::getConfigDir();
             }
         }
 
@@ -307,7 +307,7 @@ class Configuration
         if ($instancename === 'simplesaml') {
             try {
                 return self::getConfig();
-            } catch (SimpleSAML\Error\ConfigurationError $e) {
+            } catch (\SimpleSAML\Error\ConfigurationError $e) {
                 throw \SimpleSAML\Error\CriticalConfigurationError::fromException($e);
             }
 
@@ -461,7 +461,7 @@ class Configuration
      *
      * @return string The absolute path relative to the root of the website.
      *
-     * @throws SimpleSAML\Error\CriticalConfigurationError If the format of 'baseurlpath' is incorrect.
+     * @throws \SimpleSAML\Error\CriticalConfigurationError If the format of 'baseurlpath' is incorrect.
      *
      * @deprecated This method will be removed in SimpleSAMLphp 2.0. Please use getBasePath() instead.
      */
@@ -469,7 +469,7 @@ class Configuration
     {
         if (!$this->deprecated_base_url_used) {
             $this->deprecated_base_url_used = true;
-            SimpleSAML\Logger::warning(
+            \SimpleSAML\Logger::warning(
                 "SimpleSAML_Configuration::getBaseURL() is deprecated, please use getBasePath() instead."
             );
         }
@@ -488,7 +488,7 @@ class Configuration
      *
      * @return string The absolute path where SimpleSAMLphp can be reached in the web server.
      *
-     * @throws SimpleSAML\Error\CriticalConfigurationError If the format of 'baseurlpath' is incorrect.
+     * @throws \SimpleSAML\Error\CriticalConfigurationError If the format of 'baseurlpath' is incorrect.
      */
     public function getBasePath()
     {
@@ -513,8 +513,8 @@ class Configuration
              * with the configuration. Use a guessed base path instead of the one provided.
              */
             $c = $this->toArray();
-            $c['baseurlpath'] = SimpleSAML\Utils\HTTP::guessBasePath();
-            throw new SimpleSAML\Error\CriticalConfigurationError(
+            $c['baseurlpath'] = \SimpleSAML\Utils\HTTP::guessBasePath();
+            throw new \SimpleSAML\Error\CriticalConfigurationError(
                 'Incorrect format for option \'baseurlpath\'. Value is: "'.
                 $this->getString('baseurlpath', 'simplesaml/').'". Valid format is in the form'.
                 ' [(http|https)://(hostname|fqdn)[:port]]/[path/to/simplesaml/].',
