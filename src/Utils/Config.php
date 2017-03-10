@@ -1,6 +1,5 @@
 <?php
 namespace SimpleSAML\Utils;
-use SimpleSAML\Configuration;
 /**
  * Utility class for SimpleSAMLphp configuration management and manipulation.
  *
@@ -48,7 +47,7 @@ class Config
      */
     public static function getSecretSalt()
     {
-        $secretSalt = \SimpleSAML_Configuration::getInstance()->getString('secretsalt');
+        $secretSalt = \SimpleSAML\Configuration::getInstance()->getString('secretsalt');
         if ($secretSalt === 'defaultsecretsalt') {
             throw new \InvalidArgumentException('The "secretsalt" configuration option must be set to a secret value.');
         }
