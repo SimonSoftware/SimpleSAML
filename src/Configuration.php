@@ -204,7 +204,7 @@ class Configuration
      * @param string $filename The name of the configuration file.
      * @param string $configSet The configuration set. Optional, defaults to 'simplesaml'.
      *
-     * @return SimpleSAML_Configuration The SimpleSAML_Configuration object.
+     * @return Configuration The SimpleSAML\Configuration object.
      * @throws Exception If the configuration set is not initialized.
      */
     public static function getConfig($filename = 'config.php', $configSet = 'simplesaml')
