@@ -102,7 +102,7 @@ class Configuration
      * @param string $filename The full path of the configuration file.
      * @param bool $required Whether the file is required.
      *
-     * @return SimpleSAML_Configuration The configuration file. An exception will be thrown if the
+     * @return Configuration The configuration file. An exception will be thrown if the
      *                                   configuration file is missing.
      *
      * @throws Exception If the configuration file is invalid or missing.
@@ -168,7 +168,7 @@ class Configuration
             return $cfg;
         }
 
-        $cfg = new SimpleSAML_Configuration($config, $filename);
+        $cfg = new Configuration($config, $filename);
         $cfg->filename = $filename;
 
         self::$loadedConfigs[$filename] = $cfg;
@@ -265,14 +265,14 @@ class Configuration
      * instance with that name will be kept for it to be retrieved later with getInstance($instance). If null, the
      * configuration will not be kept for later use. Defaults to null.
      *
-     * @return SimpleSAML_Configuration The configuration object.
+     * @return Configuration The configuration object.
      */
     public static function loadFromArray($config, $location = '[ARRAY]', $instance = null)
     {
         assert('is_array($config)');
         assert('is_string($location)');
 
-        $c = new SimpleSAML_Configuration($config, $location);
+        $c = new Configuration($config, $location);
         if ($instance !== null) {
             self::$instance[$instance] = $c;
         }
@@ -291,7 +291,7 @@ class Configuration
      *
      * @param string $instancename The instance name of the configuration file. Deprecated.
      *
-     * @return SimpleSAML_Configuration The configuration object.
+     * @return Configuration The configuration object.
      *
      * @throws Exception If the configuration with $instancename name is not initialized.
      */

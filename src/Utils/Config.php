@@ -1,6 +1,6 @@
 <?php
 namespace SimpleSAML\Utils;
-
+use SimpleSAML\Configuration;
 /**
  * Utility class for SimpleSAMLphp configuration management and manipulation.
  *
@@ -25,7 +25,7 @@ class Config
             throw new \InvalidArgumentException('Invalid input parameters.');
         }
 
-        $globalConfig = \SimpleSAML_Configuration::getInstance();
+        $globalConfig = Configuration::getInstance();
         $base = $globalConfig->getPathValue('certdir', 'cert/');
         return System::resolvePath($path, $base);
     }
